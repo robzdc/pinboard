@@ -16,13 +16,16 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'foundation-rails'
 
+# Authentication!
 gem 'devise'
+gem 'cancan'
 gem 'omniauth'
 gem 'omniauth-twitter'
 #gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
 
-gem 'cancan'
+# Administrator
+gem 'activeadmin', github: 'gregbell/active_admin'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -56,5 +59,7 @@ gem "bullet", group: :development
 gem 'pry-rails', group: [:development, :test]
 gem 'quiet_assets', group: :development
 gem 'rspec-rails', group: [:development, :test]
+gem 'factory_girl_rails', group: [:development, :test]
+gem "faker", group: :test
 gem 'mailcatcher', group: :development
 

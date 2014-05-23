@@ -16,6 +16,6 @@
  *= require 'mediaqueries'
  *= require 'style'
  *= require 'teal_pink'
- *= require foundation_and_overrides
+ *= require 'foundation_and_overrides'
 
  */

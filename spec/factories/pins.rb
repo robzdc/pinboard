@@ -17,6 +17,9 @@ require'faker'
 
 FactoryGirl.define do 
   factory :pin do
-    title Faker::Lorem.sentences(1)
+    title Faker::Lorem.sentence(word_count = 4) 
+    description Faker::Lorem.paragraph 
+    user_id 5
+    type_id 1
   end
 end

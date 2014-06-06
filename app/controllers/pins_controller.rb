@@ -1,6 +1,7 @@
 class PinsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_pin, only: [:show, :edit, :update, :destroy]
+  before_action :set_type, only: [:show, :edit, :new]
 
   # GET /pins
   # GET /pins.json
@@ -68,8 +69,14 @@ class PinsController < ApplicationController
       @pin = Pin.find(params[:id])
     end
 
+    def set_type
+      @type = Type.all
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def pin_params
       params.require(:pin).permit(:title, :description, :status, :user_id, :type_id)
     end
 end
+
+ 

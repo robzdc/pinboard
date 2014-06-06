@@ -27,6 +27,12 @@ gem 'omniauth-linkedin'
 # Administrator
 gem 'activeadmin', github: 'gregbell/active_admin'
 
+# Upload files
+gem "paperclip", github: 'thoughtbot/paperclip'
+
+# Tagging
+gem 'acts-as-taggable-on'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -54,7 +60,7 @@ gem 'spring',        group: :development
 ## Development & Testing ##
 gem 'better_errors', group: :development
 gem 'meta_request', group: :development
-gem 'annotate', group: :development
+gem 'annotate', group: :development #annotate --exclude routes
 gem "bullet", group: :development
 gem 'pry-rails', group: [:development, :test]
 gem 'quiet_assets', group: :development

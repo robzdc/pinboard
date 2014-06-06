@@ -89,6 +89,11 @@ describe PinsController do
         assigns(:pin).should be_a_new(Pin)
       end
 
+      it "assigns a new pin without type_id" do
+        pin = FactoryGirl.build(:pin, type_id: '')
+        expect(pin).to have(1).errors_on(:type_id)
+      end
+
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Pin.any_instance.stub(:save).and_return(false)

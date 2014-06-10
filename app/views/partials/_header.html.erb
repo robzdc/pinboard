@@ -1,69 +1,74 @@
-<header id="header">
-  <div class="head-wrap">
-    <hgroup id="logo" class="row">
-      <h1><a href=""><%= image_tag("logo.png") %></a></h1>
-    </hgroup>
 
-    <div id="nav-hold">
-      <div class="row">
-        <nav id="nav" class="nine columns">
-          <ul id="navigation" class="sf-menu">
-            <li class='current'>
-              <a class='current' href="index.html">Home</a>
-            </li>
-            <li>
-              <a href="">Home Layouts</a>
-              <ul>
-                <li><a href="index-two-col.html">Two Columns</a></li>
-                <li><a href="index-three-col.html">Three Columns</a></li>
-                <li class='current'><a class='current' href="index.html">Four Columns</a></li>
-                <li><a href="index-five-col.html">Five Columns</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="">Post Formats</a>
-              <ul>
-                <li><a href="single.html">Standard Post</a></li>
-                <li><a href="single-image.html">Image Post</a></li>
-                <li><a href="single-gallery.html">Image Gallery Post</a></li>
-                <li><a href="single-video.html">Video Post</a></li>
-                <li><a href="single-audio.html">Audio Post</a></li>
-                <li><a href="single-quote.html">Quote Post</a></li>
-                <li><a href="single-link.html">Link Post</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="single-alt.html">Alternate Post Layout</a>
-            </li>
-            <li>
-              <a href="fullwidth.html">Fullwidth Template</a>
-            </li>
-            <% if user_signed_in? %>
-              <li>
-              <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-              </li>
-              <li>
-              <%= link_to('Edit registration', edit_user_registration_path) %>
-              </li>
-            <% else %>
-              <li>
-              <%= link_to('Login', new_user_session_path)  %>  
-              </li>
-              <li>
-              <%= link_to('Register', new_user_registration_path)  %>
-              </li>
-            <% end %>
-             
-          </ul><!-- /navigation -->
-        </nav><!-- /nav -->
 
-        <aside class="widget widget_search three columns">
-          <form action="/" class="searchform" method="get" role="search">
-            <input size="27" type="text" title="Search" class="s" name="s">
-            <input type="submit" class="searchsubmit btn" value="GO">
-          </form>
-        </aside> <!-- .widget_search -->
-      </div> <!-- .wrap -->
-    </div> <!-- #nav-hold -->
-  </div> <!-- .head-wrap -->
-</header>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#czsale-navbar">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+  <div class="collapse navbar-collapse" id="czsale-navbar">
+    <a href="addClassified.html" class="btn btn-success navbar-btn add-classified-btn navbar-left" role="button">Add classified</a>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="index.html">Home page</a></li>
+          <li><a href="addClassified.html">Add classified</a></li>
+          <li><a href="category.html">Category page</a></li>
+          <li><a href="detail.html">Classified detail</a></li>
+          <li><a href="conditions.html">Rules &amp; Conditions</a></li>
+          <li><a href="help.html">Help (FAQ)</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <% if user_signed_in? %>
+            <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>   
+            <li><%= link_to('Edit registration', edit_user_registration_path) %></li>        
+          <% else %>
+            <li><%= link_to('Login', new_user_session_path) %>  </li>
+            <li><%= link_to('Register', new_user_registration_path) %></li>
+          <% end %>
+        </ul>
+      </li>
+      <li><a href="help.html">Help</a></li>
+      <li><a href="signUp.html">Sign Up</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign in <b class="caret"></b></a>
+        <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+          <li>
+            <div class="row">
+              <div class="col-md-12">
+                <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                  <div class="form-group">
+                    <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required="">
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="exampleInputPassword2">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required="">
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox"> Remember me
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-success btn-block">Sign in</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <input class="btn btn-primary btn-block" type="button" id="sign-in-google" value="Sign In with Google">
+            <input class="btn btn-primary btn-block" type="button" id="sign-in-twitter" value="Sign In with Twitter">
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+ 

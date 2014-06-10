@@ -12,10 +12,10 @@
  *
  *= require_tree .
  *= require_self
- *= require 'foundation'
- *= require 'mediaqueries'
- *= require 'style'
- *= require 'teal_pink'
- *= require 'foundation_and_overrides'
+
+ *= require 'fileupload/jquery.fileupload'
+ *= require 'fileupload/jquery.fileupload-ui'
+ 
 
  */
+

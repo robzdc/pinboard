@@ -89,16 +89,21 @@ describe PinsController do
         assigns(:pin).should be_a_new(Pin)
       end
 
-      it "assigns a new pin without type_id" do
-        pin = FactoryGirl.build(:pin, type_id: '')
-        expect(pin).to have(1).errors_on(:type_id)
-      end
-
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Pin.any_instance.stub(:save).and_return(false)
         post :create, {:pin => { "title" => "invalid value" }}
         response.should render_template("new")
+      end
+
+      it "assigns a title with more than 70 characters" do
+        pin = FactoryGirl.build(:pin, title: Faker::Lorem.characters(char_count = 71))
+        expect(pin).to have(1).errors_on(:title)
+      end
+
+      it "assigns a new pin without type_id" do
+        pin = FactoryGirl.build(:pin, type_id: '')
+        expect(pin).to have(1).errors_on(:type_id)
       end
     end
   end
